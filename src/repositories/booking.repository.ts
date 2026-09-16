@@ -4,6 +4,7 @@ import { validate as isValidUUID } from "uuid";
 
 import prismaClient from "../prisma/client";
 import { BadRequestError, NotFoundError } from "../utils/errors/app.error";
+import { CreateBookingDTO } from "../dto/booking.dto.ts";
 
 export async function createBooking(bookingInput : CreateBookingDTO) {
     const booking = await prismaClient.booking.create({
